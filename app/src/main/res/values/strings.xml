@@ -4,4 +4,7 @@
     <string name="username">ユーザー名</string>
     <string name="mailaddress">メールアドレス</string>
     <string name="password">パスワード</string>
+    <string name="checkbox">利用規約とプライバシーポリシーに同意する</string>
+    <string name="register">新規登録</string>
+    <string name="lonin">ログイン</string>
 </resources>
