@@ -1,5 +1,6 @@
 package com.websarva.wings.android.wispace
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,5 +27,12 @@ class Register : AppCompatActivity() {
         Log.d("sample", "${username}")
         Log.d("sample", "${address}")
         Log.d("sample", "${pass}")
+    }
+
+    fun login(view: View){
+        val intent = Intent(this@Register, Login::class.java)
+        startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        finish()
     }
 }
