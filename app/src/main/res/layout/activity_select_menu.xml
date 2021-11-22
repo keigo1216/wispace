@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBE5D6"
+    tools:context=".SelectMenu">
+
+    <Button
+        android:id="@+id/study"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="勉強"
+        android:textSize="40sp"
+        app:backgroundTint="#F4B183"
+        android:background="@drawable/selectmenu_layout"
+        app:layout_constraintBottom_toTopOf="@+id/programing"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/programing"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="プログラミング"
+        app:backgroundTint="#F4B183"
+        android:textSize="15sp"
+        android:background="@drawable/selectmenu_layout"
+        app:layout_constraintTop_toBottomOf="@+id/study"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/math"/>
+
+    <Button
+    android:id="@+id/math"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:text="数学"
+    android:textSize="40sp"
+    app:backgroundTint="#F4B183"
+    android:background="@drawable/selectmenu_layout"
+    app:layout_constraintTop_toBottomOf="@+id/programing"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
