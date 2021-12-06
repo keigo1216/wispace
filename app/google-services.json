@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618053210183",
+    "project_id": "test-99a7b",
+    "storage_bucket": "test-99a7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618053210183:android:a4055b3a31eb1bc381e162",
+        "android_client_info": {
+          "package_name": "com.websarva.wings.android.wispace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618053210183-up5lriul0rktkb7nnoctkgr5jg7e9gvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3TXtG0gWsCHXgMejKnTy6u2wsS-OB2eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618053210183-up5lriul0rktkb7nnoctkgr5jg7e9gvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
