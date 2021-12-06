@@ -32,7 +32,7 @@ class Register : AppCompatActivity() {
     fun login(view: View){
         val intent = Intent(this@Register, Login::class.java)
         startActivity(intent)
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+//        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
 }

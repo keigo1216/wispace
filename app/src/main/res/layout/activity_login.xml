@@ -93,7 +93,7 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:background="@drawable/login_login_bt"
-        android:onClick="register_bt"
+        android:onClick="login_bt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent"

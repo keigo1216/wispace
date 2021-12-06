@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: View){
-
+        val intent = Intent(this@MainActivity, Login::class.java)
+        startActivity(intent)
     }
 
     fun register(view: View){

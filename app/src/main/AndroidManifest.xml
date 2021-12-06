@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wispace">
         <activity
+            android:name=".Tweet"
+            android:exported="false" />
+        <activity
+            android:name=".TimeLine"
+            android:exported="false" />
+        <activity
             android:name=".SelectMenu"
             android:exported="false" />
         <activity

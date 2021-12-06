@@ -17,4 +17,12 @@ class Login : AppCompatActivity() {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
+
+    //仮で置いているから用変更
+    fun login_bt(view: View){
+        val intent = Intent(this@Login, TimeLine::class.java)
+        startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        finish()
+    }
 }
