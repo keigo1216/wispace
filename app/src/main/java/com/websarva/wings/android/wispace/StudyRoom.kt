@@ -20,7 +20,7 @@ class StudyRoom : AppCompatActivity() {
 
     //ボタンが押された時の処理
     fun seat_bt(view: View){
-        val intent = Intent(this@madatukuttenai, Login::class.java)
+        val intent = Intent(this@SelectMenu, Login::class.java)
         startActivity(intent)
 //        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
