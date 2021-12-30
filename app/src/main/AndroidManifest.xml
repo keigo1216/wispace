@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wispace">
         <activity
+            android:name=".ChatLog"
+            android:exported="false"/>
+
+        <activity
+            android:name=".StudyRoom"
+            android:exported="false" />
+        <activity
+            android:name=".Select_icon"
+            android:exported="false" />
+        <activity
             android:name=".Tweet"
             android:exported="false" />
         <activity

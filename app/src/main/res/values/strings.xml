@@ -7,7 +7,7 @@
     <string name="checkbox">利用規約とプライバシーポリシーに同意する</string>
     <string name="register">新規登録</string>
     <string name="lonin">ログイン</string>
-    
+
     <string-array name="list">
         <item>選択してください</item>
         <item>勉強</item>

@@ -53,42 +53,51 @@
         android:id="@+id/account_str"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/account"
-        android:textSize="40sp"
         android:layout_marginLeft="24dp"
-        android:textColor="@color/black"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/register_bt"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/account"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_bt" />
+
+    <ImageButton
+        android:id="@+id/select_icon_bt"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/select_bt"
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_str" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/partsdesign"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:hint="@string/username"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/partsdesign"
         android:gravity="center"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@id/account_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/mailaddress"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:hint="名前"
+        app:layout_constraintTop_toBottomOf="@+id/select_icon_bt"
+        app:layout_constraintBottom_toTopOf="@+id/mailaddress"/>
 
     <EditText
         android:id="@+id/mailaddress"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/partsdesign"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:hint="@string/mailaddress"
+        android:background="@drawable/partsdesign"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        android:hint="@string/mailaddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
         android:id="@+id/password"
@@ -100,6 +109,7 @@
         android:hint="@string/password"
         android:gravity="center"
         android:layout_marginTop="30dp"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/mailaddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -123,15 +133,24 @@
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <ImageButton
+        android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:background="@drawable/register_finish_bt"
-        android:onClick="register_bt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkbox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectphoto_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/select_icon_bt"
+        app:layout_constraintEnd_toEndOf="@+id/select_icon_bt"
+        app:layout_constraintStart_toStartOf="@+id/select_icon_bt"
+        app:layout_constraintTop_toTopOf="@+id/select_icon_bt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
