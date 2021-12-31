@@ -12,6 +12,7 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
 import kotlinx.android.synthetic.main.chat_from_row.view.*
 import kotlinx.android.synthetic.main.chat_to_row.view.*
+import java.sql.Time
 
 class ChatLog : AppCompatActivity() {
 
@@ -37,7 +38,8 @@ class ChatLog : AppCompatActivity() {
 
     private fun listenForMessage(){
 
-        val ref = FirebaseDatabase.getInstance().getReference("/chat/room")
+        val roomId = intent.getStringExtra(TimeLine.ROOM_KEY)
+        val ref = FirebaseDatabase.getInstance().getReference("/chat/$roomId")
 
         ref.addChildEventListener(object: ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
@@ -112,7 +114,7 @@ class ChatLog : AppCompatActivity() {
         val text = editText_chat_log.text.toString()
 
         val fromId = FirebaseAuth.getInstance().uid
-        val roomName = "room"
+        val roomName = intent.getStringExtra(TimeLine.ROOM_KEY)
 
         if(fromId == null) return
         if(roomName == null) return

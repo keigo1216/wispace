@@ -13,6 +13,7 @@ import android.widget.SimpleAdapter
 import androidx.core.content.FileProvider
 import androidx.core.view.drawToBitmap
 import com.fasterxml.jackson.databind.util.ClassUtil.getPackageName
+import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
@@ -37,8 +38,11 @@ class Select_icon : AppCompatActivity() {
         adapter.add(IconItem(9, 10))
         adapter.add(IconItem(11, 12))
 
-        adapter.setOnItemClickListener { item, view ->
+        val dir = FirebaseStorage.getInstance().getReference("/icon/icon_1.png")
+//        Log.d("Select_icon", "${dir.downloadUrl}")
 
+        dir.downloadUrl.addOnSuccessListener {
+            Log.d("Select_icon", "$it")
         }
 
         recyclerView_icon_select.adapter = adapter

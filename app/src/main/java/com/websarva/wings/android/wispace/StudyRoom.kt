@@ -10,7 +10,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_study_room.*
+import java.sql.Time
 
 class StudyRoom : AppCompatActivity() {
 
@@ -25,8 +27,10 @@ class StudyRoom : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_study_room)
 
+        val roomId = intent.getStringExtra(TimeLine.ROOM_KEY)
+
         val database = FirebaseDatabase.getInstance()
-        val ref = database.getReference("room")
+        val ref = database.getReference("/room/$roomId")
         val user = Firebase.auth.currentUser
 
         listenForState()
@@ -76,7 +80,16 @@ class StudyRoom : AppCompatActivity() {
                                 flag = true
 //                            mButton[i][j]!!.setBackgroundResource(R.drawable.studyroom_clicked) //画像を変更
 //                            ref.child("${uid}").setValue(3 * i + j) //データベースに追加
-                                ref.child("$uid").setValue(UserInRoom(uid, 3 * i + j))
+
+                                FirebaseDatabase.getInstance().getReference("user/$uid")
+                                    .addValueEventListener(object: ValueEventListener{
+                                        override fun onDataChange(snapshot: DataSnapshot) {
+                                            val current_user_object = snapshot.getValue(User::class.java)
+                                            ref.child("$uid").setValue(UserInRoom(uid, current_user_object!!.profileImageUri, 3 * i + j))
+                                        }
+                                        override fun onCancelled(error: DatabaseError) {
+                                        }
+                                })
                             }
                         }
                     }
@@ -86,14 +99,20 @@ class StudyRoom : AppCompatActivity() {
 
         chat_button.setOnClickListener {
             val intent = Intent(this, ChatLog::class.java)
+            intent.putExtra(TimeLine.ROOM_KEY, roomId)
             startActivity(intent)
+        }
+
+        back_button_study_room.setOnClickListener {
+            finish()
         }
 
     }
 
     private fun whether_resumu(){
+        val roomId = intent.getStringExtra(TimeLine.ROOM_KEY)
         val uid = FirebaseAuth.getInstance().uid
-        val ref = FirebaseDatabase.getInstance().getReference("/room/$uid")
+        val ref = FirebaseDatabase.getInstance().getReference("/room/$roomId/$uid")
         ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val roomstate = snapshot.getValue(UserInRoom::class.java)
@@ -114,18 +133,18 @@ class StudyRoom : AppCompatActivity() {
 
     private fun listenForState(){
 
-        val ref = FirebaseDatabase.getInstance().getReference("/room")
+        val roomId = intent.getStringExtra(TimeLine.ROOM_KEY)
+        val ref = FirebaseDatabase.getInstance().getReference("/room/$roomId")
 
         ref.addChildEventListener(object: ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 val roomstate = snapshot.getValue(UserInRoom::class.java)
 
-                Log.d("test", "hellolllllll")
-
                 if(roomstate != null){
                     val i = roomstate.location / 3
                     val j = roomstate.location % 3
-                    mButton[i][j]!!.setBackgroundResource(R.drawable.studyroom_clicked)
+                    Log.d("sample", roomstate.profileImageUri)
+                    Picasso.get().load(roomstate.profileImageUri).into(mButton[i][j])
                     mApper[i][j] = true
                 }
             }
@@ -149,7 +168,8 @@ class StudyRoom : AppCompatActivity() {
                 if(roomstate != null){
                     val i = roomstate.location / 3
                     val j = roomstate.location % 3
-                    mButton[i][j]!!.setBackgroundResource(R.drawable.microsoftteams_image__2_)
+//                    mButton[i][j]!!.setBackgroundResource(R.drawable.microsoftteams_image__2_)
+                    mButton[i][j]!!.setImageDrawable(null)
                     mApper[i][j] = false
                 }
 
@@ -173,6 +193,6 @@ class StudyRoom : AppCompatActivity() {
 
 }
 
-class UserInRoom(val uid: String, val location: Int){
-    constructor(): this("", -1)
+class UserInRoom(val uid: String, val profileImageUri: String, val location: Int){
+    constructor(): this("", "",-1)
 }

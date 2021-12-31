@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="#BDD7EE"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logo"
@@ -22,22 +21,11 @@
         android:id="@+id/lonin_bt"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:background="@drawable/home_lonin"
-        android:onClick="login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/register_bt"
-        app:layout_constraintTop_toBottomOf="@+id/logo"/>
-
-    <ImageButton
-        android:id="@+id/register_bt"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:background="@drawable/home_register"
-        android:onClick="register"
-        app:layout_constraintTop_toBottomOf="@+id/lonin_bt"
+        android:background="@drawable/home_start_button"
+        android:onClick="start"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

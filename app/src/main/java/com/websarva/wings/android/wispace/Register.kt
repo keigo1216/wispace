@@ -16,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_select_menu.*
 import java.util.*
 
 class Register : AppCompatActivity() {
@@ -39,6 +38,13 @@ class Register : AppCompatActivity() {
 
         register.setOnClickListener {
             peformRegister()
+        }
+
+        lonin_bt.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
         }
     }
 

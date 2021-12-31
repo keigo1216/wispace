@@ -38,7 +38,7 @@ class Login : AppCompatActivity() {
                         Log.d("sample", "hello1")
 //                        val intent = Intent(this@Login, Select::class.java)
 //                        startActivity(intent)
-                        val intent = Intent(this@Login, StudyRoom::class.java)
+                        val intent = Intent(this@Login, TimeLine::class.java)
                         startActivity(intent)
                         Log.d("sample", "hello2")
                         finish()
