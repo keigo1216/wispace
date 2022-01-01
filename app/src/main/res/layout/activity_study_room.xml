@@ -6,24 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/back_button_study_room"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/back_button"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_set"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/kokuban">
 
-    <ImageButton
-        android:id="@+id/chat_button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/studyroom_bt"
-        app:layout_constraintStart_toStartOf="@id/back_button_study_room"
-        app:layout_constraintTop_toBottomOf="@+id/back_button_study_room" />
+        <ImageButton
+            android:id="@+id/back_button_study_room"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/chat_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/studyroom_bt"
+            app:layout_constraintStart_toStartOf="@id/back_button_study_room"
+            app:layout_constraintTop_toBottomOf="@+id/back_button_study_room" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/kokuban"
@@ -32,10 +44,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/studyroom_kokuban"
-        app:layout_constraintDimensionRatio="1.2:1"
+        app:layout_constraintStart_toEndOf="@+id/button_set"
         app:layout_constraintBottom_toTopOf="@+id/chair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="4"
         app:layout_constraintVertical_chainStyle="spread"
         app:layout_constraintVertical_weight="1" />
 

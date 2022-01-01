@@ -20,13 +20,14 @@
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_select_icon2.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_select_menu.xml" value="0.264" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_study_room.xml" value="0.176" />
-        <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_time_line.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_time_line.xml" value="0.264" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/activity_tweet.xml" value="0.264" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/chat_from_row.xml" value="0.536" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/chat_to_row.xml" value="0.8" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/list_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/select_icon_images.xml" value="0.152" />
         <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ketch/AndroidStudioProjects/wispace/app/src/main/res/layout/timeline_row.xml" value="0.5714285714285714" />
       </map>
     </option>
   </component>

@@ -11,6 +11,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.CropCircleTransformation
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import kotlinx.android.synthetic.main.activity_study_room.*
 import java.sql.Time
 
@@ -144,7 +146,7 @@ class StudyRoom : AppCompatActivity() {
                     val i = roomstate.location / 3
                     val j = roomstate.location % 3
                     Log.d("sample", roomstate.profileImageUri)
-                    Picasso.get().load(roomstate.profileImageUri).into(mButton[i][j])
+                    Picasso.get().load(roomstate.profileImageUri).transform(CropCircleTransformation()).into(mButton[i][j])
                     mApper[i][j] = true
                 }
             }
